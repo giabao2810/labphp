@@ -1,64 +1,43 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
-    <meta charset="utf-8">
-    <title>MultiShop-Online</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
-    <!-- Favicon -->
-    <link href="public/img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="public/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="public/css/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP PHP</title>
 </head>
-
 <body>
-<?php
-    include_once("header.php");
-?>
+    <div id="wrapper">
+        <?php
+            require_once("userclass.php");
+            $user1 = new User ('Nguyen Van A', 'abc@gmail.com');
+            echo "<h2> ---User infor ---</h2>";
+            echo "UserID: ".$user1->GetUserID()."<br/>";
+            echo "UserName: ".$user1->GetUserName()."<br/>";
 
-<?php include_once("list_product.php");?>
+            $user2 = new User ('Nguyen Van B', 'abc@gmail.com');
+            echo "<h2> ---User infor ---</h2>";
+            echo "UserID: ".$user2->GetUserID()."<br/>";
+            echo "UserName: ".$user2->GetUserName()."<br/>";
+            
+            include("emloyeeclass.php");
+            $person_a = new Person("Nguyen Van C", 1234);
+            echo "<h2> ---More OPP PHP</h2>";
+            echo "Person Name: ".$person_a->GetName()."<br/>";
+            echo "Person ID: ".$person_a->GetName()."<br/>";
 
+            echo "<h2>Employee</h2>";
+            $employee_a = new Employee("Nguyen Van D",5678,"Security");
+            echo "Employee Id: ".$employee_a->GetEmployeeID()."<br/>";
+            echo "Employee Name: ".$employee_a->GetName()."<br/>";
+            echo "Employee Department: ".$employee_a->GetDepartment()."<br/>";
+            echo "<h2>More Employee</h2>";
+            $employee_b =  new Employee("Nguyen Van E", 112233, "Offial");
+            echo "Employee ID: ".$employee_b->GetEmployeeID()."<br/>";
+            echo "Employee Name: ".$employee_b->GetName()."<br>/";
+            echo "Employee Department: ".$employee_b->GetDepartment()."<br/>";
+        ?>
 
-    <?php
-    include_once("footer.php");
-    ?>
-    
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="public/liblib/easing/easing.min.js"></script>
-    <script src="public/liblib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="public/libmail/jqBootstrapValidation.min.js"></script>
-    <script src="public/libmail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="public/libjs/main.js"></script>
-    <script src="public/img"></script>
+    </div>
 </body>
-
 </html>
